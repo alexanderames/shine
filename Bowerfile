@@ -1,1 +1,5 @@
 asset 'bootstrap-sass-official'
+# START_HIGHLIGHT
+# END_HIGHLIGHT
+asset 'angular'
+resolution 'angular'
