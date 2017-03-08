@@ -56,8 +56,6 @@ describe("CustomerSearchController", function() {
       httpBackend.when('GET','/customers.json?keywords=bob&page=0').
                   respond(serverResults);
     });
-
-
     
     // previous setup code
 

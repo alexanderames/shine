@@ -33,4 +33,7 @@ app.controller("CustomerSearchController", [
       $scope.search($scope.keywords);
     }
   }
-]);
+]).error(
+  function(data,status,headers,config){
+    alert("There was a problem:"+ status);
+  });
