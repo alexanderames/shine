@@ -1,5 +1,6 @@
 asset 'bootstrap-sass-official'
 asset 'angular-mocks'
+asset 'angular-route'
 # START_HIGHLIGHT
 # END_HIGHLIGHT
 asset 'angular', '~> 1.5'
