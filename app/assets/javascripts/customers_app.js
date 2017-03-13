@@ -5,23 +5,23 @@ var app = angular.module(
     'templates'
   ]
 ); 
-
+    // configure our routes here...
 app.config([
           "$routeProvider",
   function($routeProvider) {
-
-    // configure our routes here...
-
     $routeProvider.when("/", {
       controller: "CustomerSearchController",
       templateUrl: "customer_search.html"
+    }).when("/:id",{
+      controller: "CustomerDetailController",
+      templateUrl: "customer_detail.html"
     });
   }
 ]);
 
 app.controller("CustomerSearchController", [ 
-          '$scope','$http',
-  function($scope , $http) {                         
+          '$scope','$http', '$location',
+  function($scope , $http, $location) {                         
 
     var page = 0;
 
@@ -43,7 +43,9 @@ app.controller("CustomerSearchController", [
           alert("There was a problem: " + status);
         });
     }
-
+    $scope.viewDetails = function(customer) {
+      $location.path("/" + customer.id);
+    }
     $scope.previousPage = function() {
       if (page > 0) {
         page = page - 1;
