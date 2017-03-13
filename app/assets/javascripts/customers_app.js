@@ -4,18 +4,20 @@ var app = angular.module(
     'ngRoute',
     'templates'
   ]
-);
+); 
 
 app.config([
           "$routeProvider",
   function($routeProvider) {
+
+    // configure our routes here...
 
     $routeProvider.when("/", {
       controller: "CustomerSearchController",
       templateUrl: "customer_search.html"
     });
   }
-]); 
+]);
 
 app.controller("CustomerSearchController", [ 
           '$scope','$http',
@@ -24,17 +26,20 @@ app.controller("CustomerSearchController", [
     var page = 0;
 
     $scope.customers = [];
-    $scope.search = function(searchTerm) {
-    	if (searchTerm.length < 3) {
-    		return;
-    	}
+    $scope.search = function(searchTerm) {   
+      $scope.loading = true;
+      if (searchTerm.length < 3) {
+        return;
+      }
       $http.get("/customers.json",  
                 { "params": { "keywords": searchTerm, "page": page } }
       ).success(
         function(data,status,headers,config) { 
           $scope.customers = data;
+          $scope.loading = false;
       }).error(
         function(data,status,headers,config) {
+          $scope.loading = false;
           alert("There was a problem: " + status);
         });
     }
@@ -50,7 +55,4 @@ app.controller("CustomerSearchController", [
       $scope.search($scope.keywords);
     }
   }
-]).error(
-  function(data,status,headers,config){
-    alert("There was a problem:"+ status);
-  });
+]);

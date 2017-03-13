@@ -5,8 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'angularjs-rails'
 gem 'angular-rails-templates'
-gem 'sprockets'
+gem 'sprockets', '~> 3.0'
 gem 'faker'
 gem 'bower-rails'
 gem 'devise'
@@ -46,6 +47,7 @@ group :development, :test do
   # END_HIGHLIGHT
   gem 'database_cleaner'
   gem 'teaspoon-jasmine'
+  gem 'factory_girl_rails'
 end
 
 group :development do
