@@ -59,9 +59,22 @@ app.controller("CustomerSearchController", [
   }
 ]);
 
-app.controller("CustomerDetailController", [
+app.controller("CustomerDetailController", [ 
           "$scope","$http","$routeParams",
-  function($scope , $http , $routeParams){
-    //Ajax call - $scope.customer
+  function($scope , $http , $routeParams) {
+
+    // Make the Ajax call and set $scope.customer...
+
+    var customerId = $routeParams.id;
+    $scope.customer = {};
+
+    $http.get(
+      "/customers/" + customerId + ".json"
+    ).then(function(response) {
+        $scope.customer = response.data;
+      },function(response) {
+        alert("There was a problem: " + response.status);
+      }
+    );
   }
 ]);
