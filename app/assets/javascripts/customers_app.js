@@ -58,3 +58,10 @@ app.controller("CustomerSearchController", [
     }
   }
 ]);
+
+app.controller("CustomerDetailController", [
+          "$scope","$http","$routeParams",
+  function($scope , $http , $routeParams){
+    //Ajax call - $scope.customer
+  }
+]);
