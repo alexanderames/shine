@@ -43,9 +43,6 @@ app.controller("CustomerSearchController", [
           alert("There was a problem: " + status);
         });
     }
-    $scope.viewDetails = function(customer) {
-      $location.path("/" + customer.id);
-    }
     $scope.previousPage = function() {
       if (page > 0) {
         page = page - 1;
@@ -55,6 +52,9 @@ app.controller("CustomerSearchController", [
     $scope.nextPage = function() {
       page = page + 1;
       $scope.search($scope.keywords);
+    }
+    $scope.viewDetails = function(customer) {
+      $location.path("/" + customer.id);
     }
   }
 ]);
