@@ -1,24 +1,15 @@
-# README
+# shine README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*Credit for original code goes to David Copeland and his amazing textbook.*
 
-Things you may want to cover:
+This application was created by Alexander Ames for the purposes of learning how to create a CRM.
 
-* Ruby version
+In my Shine Application I use:
 
-* System dependencies
+*Ruby on Rails
 
-* Configuration
+*PostgreSQL
 
-* Database creation
+*AngularJS
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Bootstrap
