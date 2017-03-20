@@ -39,3 +39,5 @@ JOIN addresses shipping_address   ON
   shipping_address.id = customers_shipping_addresses.address_id
 JOIN states shipping_state        ON
   shipping_address.state_id = shipping_state.id
+-- END: shipping_address
+;
