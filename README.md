@@ -6,10 +6,10 @@ This application was created by Alexander Ames for the purposes of learning how 
 
 In my Shine Application I use:
 
-*Ruby on Rails
+* Ruby on Rails
 
-*PostgreSQL
+* PostgreSQL
 
-*AngularJS
+* AngularJS
 
-*Bootstrap
+* Bootstrap
