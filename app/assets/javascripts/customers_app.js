@@ -21,7 +21,7 @@ app.config([
 ]);
 
 app.controller("CustomerSearchController", [ 
-          '$scope','$http', '$location',
+          "$scope","$http", "$location",
   function($scope , $http, $location) {                         
 
     var page = 0;
@@ -69,5 +69,15 @@ app.controller("CustomerDetailController", [
 
     $scope.customer = Customer.get({"customerId: customerId"})
     alert("Ajax Call Initiated!");
+  }
+]);
+
+app.controller("CustomerCreditCardController",
+  [
+  "$scope","$resource",
+  function($scope , $resource) {
+    var CreditCardInfo = $resource('/fake_billing.json')
+      $scope.creditCard = CreditCardInfo.get({
+    "cardholder_id": 1234})
   }
 ]);

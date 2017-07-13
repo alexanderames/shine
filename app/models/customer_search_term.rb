@@ -1,4 +1,4 @@
-class CustomerSearchTerm < ApplicationRecord
+class CustomerSearchTerm
   attr_reader :where_clause, :where_args, :order
   def initialize(search_term)
     search_term = search_term.downcase
